@@ -1,4 +1,4 @@
-//
+// errdefer só roda quando o código da erro
 // Another common problem is a block of code that could exit in multiple
 // places due to an error - but that needs to do something before it
 // exits (typically to clean up after itself).
@@ -32,7 +32,7 @@ fn makeNumber() MyErr!u32 {
 
     // Please make the "failed" message print ONLY if the makeNumber()
     // function exits with an error:
-    std.debug.print("failed!\n", .{});
+    errdefer std.debug.print("failed!\n", .{});
 
     var num = try getNumber(); // <-- This could fail!
 
