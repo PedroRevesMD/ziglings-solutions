@@ -3,6 +3,13 @@
 /answers/
 /patches/healed/
 /output/
+/images/
+/test/
+/tools/
+/patches/
+
+*.md
+
 
 # Leave this in here for older zig versions
 /zig-cache/
