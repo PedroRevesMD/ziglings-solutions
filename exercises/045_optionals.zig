@@ -17,6 +17,8 @@
 // isn't null. One way to do this is to THREATEN IT with the
 // "orelse" statement.
 //
+//
+//
 //     var bar = foo orelse 2;
 //
 // Here, bar will either equal the u32 integer value stored in
@@ -29,7 +31,7 @@ pub fn main() void {
 
     // Please threaten the result so that answer is either the
     // integer value from deepThought() OR the number 42:
-    const answer: u8 = result;
+    const answer: u8 = result orelse 42;
 
     std.debug.print("The Ultimate Answer: {}.\n", .{answer});
 }
@@ -43,6 +45,7 @@ fn deepThought() ?u8 {
 //
 // Optionals are a lot like error union types which can either
 // hold a value or an error. Likewise, the orelse statement is
+//
 // like the catch statement used to "unwrap" a value or supply
 // a default value:
 //
